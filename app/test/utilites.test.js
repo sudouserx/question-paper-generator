@@ -41,7 +41,6 @@ describe("findQuestionsWithGivenTotalMark", () => {
     const result = findQuestionsWithGivenTotalMark(data, totalMark);
 
     // Assert that the result contains the expected questions
-    console.log("result", result);
     expect(result).toEqual([data]);
   });
 });
