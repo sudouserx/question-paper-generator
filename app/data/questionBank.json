@@ -1,0 +1,40 @@
+{
+    "questions": [
+      {
+        "question": "What is the capital of France?",
+        "subject": "Geography",
+        "topic": "World Capitals",
+        "difficulty": "Easy",
+        "marks": 2
+      },
+      {
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "subject": "Literature",
+        "topic": "Classic Literature",
+        "difficulty": "Medium",
+        "marks": 3
+      },
+      {
+        "question": "What is the formula for calculating the area of a circle?",
+        "subject": "Mathematics",
+        "topic": "Geometry",
+        "difficulty": "Hard",
+        "marks": 5
+      },
+      {
+        "question": "In which year did World War II end?",
+        "subject": "History",
+        "topic": "World War II",
+        "difficulty": "Medium",
+        "marks": 4
+      },
+      {
+        "question": "What is the chemical symbol for gold?",
+        "subject": "Chemistry",
+        "topic": "Elements",
+        "difficulty": "Easy",
+        "marks": 2
+      }
+    ]
+  }
+  
