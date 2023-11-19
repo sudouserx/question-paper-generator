@@ -4,45 +4,37 @@ const {
   assertGivenDifficultyPercentage,
 } = require("../utilities");
 
-
-// error chaining isn't working 
-
 const getQuestions = (
   totalMark,
   easyPercentage,
   mediumPercentage,
   hardPercentage
 ) => {
-  try {
-    // find all combination that has total mark of given query
-    const questions = data["questions"];
-    const filteredQuestionCombination = findQuestionsWithGivenTotalMark(
-      questions,
-      totalMark
-    );
-    // console.log(filteredQuestionCombination);
+  // Find all combinations that have a total mark of the given query
+  const questions = data.questions;
+  const filteredQuestionCombination = findQuestionsWithGivenTotalMark(
+    questions,
+    totalMark
+  );
 
-    if (filteredQuestionCombination.length === 0) {
-      throw new Error("No questions found with given total mark");
-    }
-
-    for (let questions of filteredQuestionCombination) {
-      // find question combination with given difficulty percentage
-      // console.log(questions);
-      const result = assertGivenDifficultyPercentage(
-        questions,
-        easyPercentage,
-        mediumPercentage,
-        hardPercentage
-      );
-      if (result) {
-        return questions;
-      }
-    }
-    throw new Error("No questions found with given difficulty percentage")
-  } catch (error) {
-    throw error;
+  if (filteredQuestionCombination.length === 0) {
+    throw new Error("No questions found with the given total mark");
   }
+
+  for (const questionSet of filteredQuestionCombination) {
+    // Find question combinations with the given difficulty percentage
+    const result = assertGivenDifficultyPercentage(
+      questionSet,
+      easyPercentage,
+      mediumPercentage,
+      hardPercentage
+    );
+    if (result) {
+      return questionSet;
+    }
+  }
+
+  throw new Error("No questions found with the given difficulty percentages");
 };
 
 module.exports = { getQuestions };

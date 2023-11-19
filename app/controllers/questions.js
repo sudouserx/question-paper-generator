@@ -1,17 +1,19 @@
 const { getQuestions } = require("../services/questions");
 
-const getQuestionsController = async (req, res) => {
+const getQuestionsController = async (req, res, next) => {
   try {
-    // const { totalMark, easy, medium, hard } = req.query;
-    const totalMark = parseInt(req.query.totalMark);
-    const easy = parseInt(req.query.easy);
-    const medium = parseInt(req.query.medium);
-    const hard = parseInt(req.query.hard);
+    const { totalMark, easy, medium, hard } = req.query;
 
-    const questions = await getQuestions(totalMark, easy, medium, hard);
+    const parsedTotalMark = parseInt(totalMark);
+    const parsedEasy = parseInt(easy);
+    const parsedMedium = parseInt(medium);
+    const parsedHard = parseInt(hard);
+
+    const questions = await getQuestions(parsedTotalMark, parsedEasy, parsedMedium, parsedHard);
     return res.json(questions);
   } catch (error) {
-    return res.status(400).json({ error: error.message });
+    // Forward the error to the central error-handling mechanism
+    next(error);
   }
 };
 
