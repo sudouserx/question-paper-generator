@@ -54,7 +54,7 @@ The Question Paper Generator is a web application designed to help users generat
 ### Example Endpoint
 
 ```http
-GET [http://localhost:3000/api/questions?totalMark=20&easy=20&medium=60&hard=20] (http://localhost:3000/api/questions?totalMark=20&easy=20&medium=60&hard=20)
+GET http://localhost:3000/api/questions?totalMark=20&easy=20&medium=60&hard=20
 ```
 
 ## Scripts
