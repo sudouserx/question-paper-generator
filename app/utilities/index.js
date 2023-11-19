@@ -1,5 +1,3 @@
-const data = require("../data/questionBank.json");
-
 const findQuestionsWithGivenTotalMark = (data, totalMark) => {
   const res = [];
   const questions = [];
